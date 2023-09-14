@@ -8,7 +8,7 @@ app.use('/api/cars/' , require('./routes/carsRoute'))
 app.use('/api/users/' , require('./routes/usersRoute'))
 app.use('/api/bookings/' , require('./routes/bookingsRoute'))
 
-
+require("dotenv").config()
 const path = require('path')
 
 if(process.env.NODE_ENV==='production')

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 
 function DefaultLayout(props) {
     const user = JSON.parse(localStorage.getItem('user'))
+    console.log(user)
   const menu = (
     <Menu>
         <Menu.Item>
@@ -22,14 +23,14 @@ function DefaultLayout(props) {
           Bookings
         </a>
       </Menu.Item>
-      <Menu.Item>
+      {user.role==="admin" && <Menu.Item>
         <a
          
           href="/admin"
         >
           Admin
         </a>
-      </Menu.Item>
+      </Menu.Item>}
       <Menu.Item onClick={()=>{
           localStorage.removeItem('user');
           window.location.href='/login'
