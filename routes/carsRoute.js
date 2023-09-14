@@ -13,6 +13,7 @@ router.get("/getallcars", async (req, res) => {
 
 router.post("/addcar", async (req, res) => {
   try {
+    console.log(req.body)
     const newcar = new Car(req.body);
     await newcar.save();
     res.send("Car added successfully");
